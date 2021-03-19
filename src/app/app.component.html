@@ -1,35 +1,189 @@
-<div class="main">
-  <img src="../assets/images/parachute1.png" class="parachute">
+<div class = "cont">
+  <audio autoplay loop style="display: none;" id = "myaudio">
+    <source src="../assets/images/ost.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+  <div class="main m1">
 
-  <div class="name">사랑의 불시착</div>
-  <div class="name n2">Crash Landing On You</div>
-  <ngb-carousel class="advertisement_cont" [interval]="3000">
-
-    <ng-template ngbSlide class="mySlides">
-      <img src="../assets/images/CLOY H 1.jpg" class="slidesimg">
-    </ng-template>
-
-    <ng-template ngbSlide class="mySlides">
-      <img src="../assets/images/CLOY H2.jpg" class="slidesimg">
-    </ng-template>
-
-    <ng-template ngbSlide class="mySlides">
-      <img src="../assets/images/CLOY H 3.jpg" class="slidesimg">
-    </ng-template>
-
-    <ng-template ngbSlide class="mySlides">
-      <img src="../assets/images/CLOY H 4.gif" class="slidesimg">
-    </ng-template>
-
-    <ng-template ngbSlide class="mySlides">
-      <img src="../assets/images/CLOY H 5.jpg" class="slidesimg">
-    </ng-template>
-
-  </ngb-carousel>
-
-  <div class = "reel">
-    <img src = "../assets/images/reel.png" class = "pic2">
-    <img src = "../assets/images/moviereel.png" class = "pic">
+    <div class="name">사랑의 불시착</div>
+    <div class = "typewriter"><div class="name n2">Crash Landing On You</div></div>
     
+    <img src = "../assets/images/soundon.png" class = "soundon">
+    <div class = "backgroundicons">
+      <div class = "iconname" (click) = "toTrailer()">
+        <img src = "../assets/images/trailer logo.png" class = "picicons" >
+        <div class = "iname">Trailer</div>
+      </div>
+
+      <div class = "iconname" (click) = "toMovieWebsite()">
+        <img src = "../assets/images/movie icon.png" class = "picicons" >
+        <div class = "iname">Movie Website</div>
+      </div>
+
+      <div class = "iconname" (click) = "toSynopsis()">
+        <img src = "../assets/images/synopsis.jpg" class = "picicons">
+        <div class = "iname">Synopsis</div>
+      </div>
+
+      <div class = "iconname" (click) = "toCast()">
+        <img src = "../assets/images/cast logo.jpg" class = "picicons">
+        <div class = "iname">Cast</div>
+      </div>
+
+      <div class = "iconname" (click) = "toOst()">
+        <img src = "../assets/images/ost logo.png" class = "picicons">
+        <div class = "iname">OSTs</div>
+      </div>
+      
+  </div>
+    </div>
+  
+    
+  <div class = "main" id = "trailer">
+    <iframe class = "trailervideo" id = "videoPlayer"
+    src="https://www.youtube.com/embed/K58Z1RORRaI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <div class = "mttag">
+      Movie Trailer
+    </div>
+    <img src = "../assets/images/chibi trailer.png" class = "picfire">
+  </div>
+
+  <div class = "main" id = "moviewebsite">
+    <img src = "../assets/images/clickhere.png" class = "clickhere">
+    <img src = "../assets/images/arrow.png" class = "arrow a1">
+    <div class = "mttag mt2">
+      Watch here
+    </div>
+
+    <a href="https://netflix.com" class = "mwva"><video class = "mwvideo" autoplay loop playsinline muted="muted">
+      <source src="../assets/images/NETFLIX.mkv" type="video/mp4">
+    Your browser does not support the video tag.
+    </video></a>
+
+    <video class = "mwcvideo" autoplay loop playsinline>
+      <source src="../assets/images/carausel.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+
+    <img src = "../assets/images/hyun bin chibi.png" class = "c1">
+    <img src="../assets/images/Yoon Se ri chibi.png" class = "c2">
+
+    <div class = "traintext">
+      "Sometimes the wrong train takes you in the right direction"
+    </div>
+
+  </div>
+
+  <div class = "main" id = "synopsis">
+    <img src="../assets/images/parachute1.png" class="parachute">
+    <video class = "synopsisvideo" autoplay loop playsinline>
+      <source src="../assets/images/synopsisvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+
+    <div class = "synopsiswriter">Crash Landing on You is a South Korean television series written by Park Ji-Eun and directed by Lee Jeong-hyo and featuring Hyun Bin, Son Ye-jin, Kim Jung-hyun, and Seo Ji-hye. It is about a South Korean chaebol heiress who, while paragliding in Seoul, South Korea, is swept up in a sudden storm, crash-lands in the North Korean portion of the DMZ, and meets a captain in the Korean People's Army. Over time, they fall in love, despite the divide and dispute between their respective countries.</div>
+    <div class = "mttag mt3">
+      Synopsis
+    </div>
+  </div>
+
+  <div class = "main m4" id = "cast">
+    <img src = "../assets/images/hover.png" class = "hover">
+    <img src = "../assets/images/arrow.png" class = "arrow a2">
+    <div class = "mttag mt4">
+      Cast
+    </div>
+    <div class = card>
+      <div class = "castinfo">
+        A South Korean chaebol heiress to Queen’s Group. She has a troubled family history as she is her father's illegitimate child (though he loves her) whose biological mother died after she was born, resulting in a strained relationship with her step-mother due to a childhood misunderstanding. She is also involved in an upcoming family succession battle, the latter making her the target of resentment from her half-brothers and their wives. After she rejected her brother's attempt to force her into an arranged marriage that would send her to the United Kingdom, she had numerous casual relationships with celebrities (but never developed any close companionships).
+      </div>
+      <div class = "cardcover">
+        <div class = "cardname">Son Ye-jin as Yoon Se-ri</div>
+        <img src = "../assets/images/1.png" class = "castimg">
+      </div>
+    </div>
+
+    <div class = card>
+      <div class = "castinfo">
+        A proficient but emotionally-reserved captain of Company Five in the Korean People's Army who is stationed along the North Korean portion of the DMZ. He is well-respected by the unit he leads and the locals of the rural village he resides in. A piano prodigy, he was studying to become a concert pianist in Switzerland before being forced to join the North Korean military after his older brother (with whom he was very close) died in a mysterious car accident.
+      </div>
+      <div class = "cardcover">
+        <div class = "cardname">Hyun bin as Ri Jeong Hyeok</div>
+        <img src = "../assets/images/4.png" class = "castimg">
+      </div>
+    </div>
+
+    <div class = card>
+      <div class = "castinfo">
+        A North Korean department store heiress and aspiring cellist who is also Ri Jeong-hyeok's fiancée through an affianced marriage arranged by their parents. While she has been infatuated with Jeong-hyeok since they were middle-school classmates, he doesn't reciprocate her feelings but agrees to the betrothed marriage out of a sense of duty towards his parents. Before the wedding, Dan desperately tries to prevent the marriage from becoming a sham after realising that Jeong-hyeok had never loved her from the start. She eventually falls for Seung-jun.
+      </div>
+      <div class = "cardcover">
+        <div class = "cardname">Seo Ji-hye as Seo Dan</div>
+        <img src = "../assets/images/2.png" class = "castimg">
+      </div>
+    </div>
+
+    <div class = card>
+      <div class = "castinfo">
+        An intelligent, charming, but poor South Korean conman with British citizenship. After his father was scammed by Se-ri's father, leading to his family's bankruptcy, he ingratiated himself with Se-ri's brother, Se-hyung, in order to embezzle from the Yoon family's company. Se-hyung attempted to marry off Se-ri to Seung-jun in order to be rid of her, but Se-ri sensed Seung-jun's ill intentions on their first meeting and rejected him. Seung-jun nonetheless successfully cheated a fortune from the Yoon's firm under Se-hyung's watch, and fled to North Korea to avoid arrest, while under pursuit by gangsters hired by Se-hyung. He eventually falls for Dan after running into her on many occasions.
+      </div>
+      <div class = "cardcover">
+        <div class = "cardname">Kim Jung-hyun as Gu Seung-jun</div>
+        <img src = "../assets/images/3.png" class = "castimg">
+      </div>
+    </div>
+  </div>
+
+  <div class = "main m5" id = "ost">
+
+    <img src = "../assets/images/fireplacechibis.png" class = "picfire">
+    <iframe src="https://giphy.com/embed/EfpSB84AuYM6uiZOwZ" width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <div class = "mttag mt5">
+      OSTs
+    </div>
+
+    <a class = "ostcont" href="https://www.youtube.com/watch?v=Ze9mO5z3nTo">
+      <img src = "../assets/images/play button.png" class = "ostimage">
+      <div class = "ostname">
+        You and my season
+      </div>
+    </a>
+    <a class = "ostcont" href="https://www.youtube.com/watch?v=jGGQyqohOaw">
+      <img src = "../assets/images/play button.png" class = "ostimage">
+      <div class = "ostname">
+        But Its destiny
+      </div>
+    </a>
+    <a class = "ostcont" href="https://www.youtube.com/watch?v=Cmomc1SnXaA">
+      <img src = "../assets/images/play button.png" class = "ostimage">
+      <div class = "ostname">
+        Flower
+      </div>
+    </a>
+    <a class = "ostcont" href="https://www.youtube.com/watch?v=lUR4XSRvmI8">
+      <img src = "../assets/images/play button.png" class = "ostimage">
+      <div class = "ostname">
+        Sunset
+      </div>
+    </a>
+    <a class = "ostcont" href="https://www.youtube.com/watch?v=FFmdTU4Cpr8">
+      <img src = "../assets/images/play button.png" class = "ostimage">
+      <div class = "ostname">
+        Here I am again
+      </div>
+    </a>
+    <a class = "ostcont" href="https://www.youtube.com/watch?v=6UPGzgWFmNo">
+      <img src = "../assets/images/play button.png" class = "ostimage">
+      <div class = "ostname">
+        One Day
+      </div>
+    </a>
+    <a class = "ostcont" href="https://www.youtube.com/watch?v=XrnK1wqDO1k&list=RDXrnK1wqDO1k&start_radio=1">
+      <img src = "../assets/images/play button.png" class = "ostimage">
+      <div class = "ostname">
+        Pictures of my heart
+      </div>
+    </a>
   </div>
 </div>

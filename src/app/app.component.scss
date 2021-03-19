@@ -1,19 +1,68 @@
+.cont{
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    overflow-x: hidden;
+    //scroll-snap-type: y mandatory;
+}   
+
+.soundon{
+    position: absolute;
+    left: 0;
+    width: 20vh;
+    height: 10vh;
+    top: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: url(../assets/images/starnight.jpg); ; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    //border: solid thin white;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 .main {
     background-image: url("../assets/images/starnight.jpg");
     background-repeat: repeat;
-    min-height: 100vh;
-    max-width: 100vw;
-    overflow-x: hidden;
+    height: 100vh;
+    //max-width: 100vw;
     display: flex;
     flex-direction: column;
     padding-top: 15vh;
-
     align-items: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    scroll-snap-align: start;
 }
 
+.m1{
+    background-image: url("../assets/images/CLOY\ poster.jpg");
+    background-size: 100% 100%;
+}
+.typewriter{
+    position: absolute;
+    top: 80vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0 1%;
+}
 .name {
     position: absolute;
+    font-family: monospace;
     //color: white;
     font-size: 400%;
     top: 2vh;
@@ -24,19 +73,43 @@
 }
 
 .n2 {
-    top: 10vh;
-    background: -webkit-linear-gradient(left, pink 50%, aqua);
+    position: relative;
+    width: fit-content;
+    
+    background: -webkit-linear-gradient(left, rgb(36, 28, 150) 50%, black);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    //color: linear-gradient(to left, pink, aqua);
+    -webkit-text-fill-color: transparent;    
+    font-size: 800%;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: solid white thin; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto;
+    animation: 
+    typing 7s steps(20, end) infinite,
+    blink-caret 1s step-end infinite;
+
 }
+
+
+@keyframes typing {
+    0% { width: 0 }
+    80% { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+  }
+
+
 .parachute {
     position: absolute;
     top: 10px;
     left: 10px;
     height: 20vh;
     width: 20vh;
-    animation: parachute 5s forwards ease-in-out;
+    animation: parachute 5s 5s infinite ease-in-out;
     z-index: 1;
 }
 
@@ -72,22 +145,6 @@
         left: 70vw;
         transform: rotate(15deg);
     }
-    // 10%{
-    //     top: 10vh;
-    //     left: 10vw;
-    // }
-    // 10%{
-    //     top: 10vh;
-    //     left: 10vw;
-    // }
-    // 10%{
-    //     top: 10vh;
-    //     left: 10vw;
-    // }
-    // 10%{
-    //     top: 10vh;
-    //     left: 10vw;
-    // }
 
     100% {
         top: 80vh;
@@ -95,33 +152,6 @@
         transform: rotate(0deg);
     }
 }
-.slidesimg {
-    height: 60vh;
-    width: 50vw;
-}
-
-.advertisement_cont {
-    height: 70vh;
-    //background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 244, 244, 1)), url("../../assets/images/avocado.jpg");
-    //margin-bottom: -10%;
-    position: absolute;
-    top: 30vh;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50vw;
-    //z-index: -1;
-}
-
-// .reel{
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     display: flex;
-//     flex-direction: column;
-//     background-color: aqua;
-// }
 
 .pic{
     position: absolute;
@@ -133,11 +163,327 @@
 
 .pic2{
     position: absolute;
-    top: 50%;
-    right: -10%;
-    transform: rotate(90deg);
+    top: 20%;
+    right: 0%;
+    opacity: 0.5;
 }
 
 .parachute:hover{
-    animation: parachute 5s forwards ease-in-out;
+    animation: parachute 3s forwards ease-in-out;
 }
+
+.picicons{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px silver;
+    cursor: pointer;
+}
+
+.picicons:hover{
+    border: solid white;
+}
+
+
+.iconname{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.iconname:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.iname{
+    font-size: 120%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    left: 95.5vw;
+    color: white;
+    width: 4vw;
+}
+
+
+.backgroundicons{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    height: 100vh;
+    width: 10vw;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 1%;
+    right: -5%;
+    transition: right 1s;
+    //left: 95%;
+}
+
+.backgroundicons:hover{
+    right: 0;
+}
+
+
+.trailervideo{
+    position: absolute;
+    height: 70vh;
+    width: 70vw;
+    top: 10vh;
+    left: 20vw;
+}
+
+.mttag{
+    position: absolute;
+    width: 25vw;
+    height: 20vh;
+    background-color: palevioletred;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 400%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transform: rotate(90deg);
+    top: 30vh;
+    left: 75vw;
+}
+
+.mt2{
+    transform: none;
+    top: 10vh;
+    height: 15vh;
+}
+
+.mt3{
+    top:15vh;
+    right: 0;
+    transform: rotate(45deg);
+}
+.mt4{
+    width: 20vw;
+    height: 10vh;
+    top: 15vh;
+    left: -9vw;
+    transform: rotate(-90deg);
+}
+
+.mt5{
+    width: 20vw;
+    height: 10vh;
+    top: 5vh;
+    left: 50%;
+    transform: none;
+}
+
+.trainpic{
+    position: absolute;
+    top: 65vh;
+    width: 90vw;
+    z-index: 3;
+}
+
+.traintext{
+    position: absolute;
+    font-size: 400%;
+    font-family: "Brush Script MT";
+    color: white;
+    top: 90vh;
+    z-index: 4;
+}
+
+.giphy-embed{
+    position: absolute;
+    left: 0;
+    top: 60vh;
+}
+
+.picfire{
+    position: absolute;
+    left: 0;
+    width: 40vh;
+    height: 40vh;
+    top: 45vh;
+}
+.mwva{
+    position: absolute;
+    top:20vh;
+    left: 30vw;
+}
+.mwvideo{
+    height: 60vh;
+}
+
+.mwcvideo{
+    position: absolute;
+    height: 85vh;
+    left: 20vw;
+    top: 5vh;
+}
+
+.c1{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.c2{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.m4{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 20vw;
+    height: 90vh;
+    position: relative;
+    // margin-top: -10vh;
+}
+
+.cardcover{
+    position: absolute;
+    width: 100%;
+    height: 170vh;
+    top: 0;
+    left: 0;
+    transition: top 2s ease-in-out;
+}
+
+.cardcover:hover{
+    top: -80vh;
+}
+
+.castinfo{
+    position: absolute;
+    top: 0;
+    color: white;
+    width: 100%;
+    height: 80vh;
+    padding: 2%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 130%;
+}
+.cardname{
+    position: absolute;
+    top: 80vh;
+    height: 10%;
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 150%;
+}
+
+.castimg{
+    position: absolute;
+    top: 90vh;
+    height: 80vh;
+    width: 100%;
+}
+
+.m5{
+    z-index: 1;
+}
+
+.synopsisvideo{
+    position: absolute;
+    height: 85vh;
+    left: 20vw;
+    top: 5vh;
+}
+
+.synopsiswriter{
+    position: absolute;
+    height: 90vh;
+    top: 5vh;
+    left: 0;
+    width: 30vw;
+    padding: 2%;
+    font-size: 200%;
+    background-color: rgba(121, 28, 28, 0.2);
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.m5{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.ostcont{
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 10vh;
+    width: 20vw;
+    display: flex;
+    margin: 5%
+}
+
+.ostcont:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.ostimage{
+    flex-basis: 10%;
+}
+
+.ostname{
+    flex-basis: 90%;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 200%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.clickhere{
+    position: absolute;
+    height: 10vh;
+    top: 5vh;
+}
+
+.arrow{
+    position: absolute;
+
+}
+
+.a1{
+    height: 10vh;
+    top: 10vh;
+    left: 53%;
+    transform: rotate(180deg);
+}
+
+.hover{
+    position: absolute;
+    height: 10vh;
+    top: 0;
+}
+
+.a2{
+    top: 0;
+    height: 10vh;
+    left: 53%;
+    transform: rotate(180deg);
+}
+
